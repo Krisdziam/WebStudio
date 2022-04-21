@@ -1,0 +1,33 @@
+.menu-button {
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  background-color: transparent;
+  border: transparent;
+  outline: transparent;
+
+  &:hover,
+  &:focus .menu-button__icon {
+    fill: var(--accent-color);
+  }
+
+  @include mq(tablet) {
+    display: none;
+  }
+  &__icon {
+    &--open {
+      opacity: 1;
+    }
+    &--close {
+      opacity: 0;
+    }
+  }
+
+  &.is-open &__icon--close {
+    opacity: 1;
+  }
+  &.is-open &__icon--open {
+    opacity: 0;
+  }
+}
