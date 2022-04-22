@@ -1,26 +1,24 @@
-.menu {
-}
-
 .header__container {
-  //   padding-top: 16px;
-  //   padding-bottom: 16px;
   position: relative;
 }
 .header__navigation {
   @include mq(mobile-only) {
-    position: absolute;
-    display: none;
+    position: fixed;
+    display: block;
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     z-index: 99;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    pointer-events: none;
     padding: 48px 40px;
-  }
-
-  &.is-open {
-    display: block;
+    &.is-open {
+      display: none;
+    }
   }
 }
 
@@ -46,14 +44,19 @@
 }
 
 .header__list {
+  @include fonts(500, 14px, 1.17, 0.02em);
+  color: var(--text-color);
 }
 
 .header__content {
+  @include mq(mobile-only) {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
 }
 
 .header__text {
-  @include fonts(500, 14px, 1.17, 0.02em);
-  color: var(--text-color);
   &:hover,
   &:focus {
     color: var(--accent-color);
@@ -61,28 +64,68 @@
 
   @include mq(mobile-only) {
     @include fonts(500, 40px, 1.17, 0.02em);
+    &:hover,
+    &:focus {
+      color: var(--accent-color);
+    }
   }
 }
 
-.curent {
-}
-
 .header__contacts {
+  @include mq(mobile-only) {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 64px;
+  }
 }
 
 .header__item {
+  @include mq(mobile-only) {
+    @include fonts(500, 34px, 1.17, 0.02em);
+    color: var(--accent-color);
+    &:nth-child(1) {
+      @include fonts(500, 24px, 1.17, 0.02em);
+      color: var(--secondary-text-color);
+    }
+    &:not(:last-child) {
+      margin-top: 32px;
+    }
+    &:hover,
+    &:focus {
+      color: var(--accent-color);
+    }
+  }
 }
 
 .header__link {
 }
 
 .header__icon {
+  @include mq(mobile-only) {
+    display: none;
+  }
 }
 
-// link
-
 .menu__list {
+  display: flex;
+  @include fonts(500, 18px, 1.22, 0.02em);
+  color: var(--accent-color);
+
   @include mq(tablet) {
     display: none;
   }
+}
+.menu__contacts {
+  display: block;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  &:last-child {
+    border: none;
+  }
+}
+
+.menu__link {
+  margin-right: 10px;
+}
+.navigation-contacts {
+  margin-top: auto;
 }
