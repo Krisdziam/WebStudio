@@ -3,11 +3,18 @@
   --logo-font: 'Raleway', sans-serif;
   --text-color: #212121;
   --secondary-text-color: #757575;
-  --accent-color: #2196F3;
+  --accent-color: #2196f3;
+  --shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  --white-color: #ffffff;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current {
   color: var(--accent-color);
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 .container {
@@ -119,6 +126,28 @@ img {
   opacity: 1;
 }
 
+.button {
+  display: block;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  background-color: var(--accent-color);
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--white-color);
+  transition: background-color var(--transition);
+}
+
+.button:hover, .button:focus {
+  background-color: #188ce8;
+}
+
 .logo {
   display: block;
   font-family: 'Raleway';
@@ -134,10 +163,18 @@ img {
 
 .header__container {
   position: relative;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ececec;
+}
+
+.header__navigation {
+  display: flex;
 }
 
 @media screen and (max-width: 767.98px) {
   .header__navigation {
+    display: flex;
     position: fixed;
     display: block;
     top: 0;
@@ -160,8 +197,10 @@ img {
   }
 }
 
-.navigation-contacts {
-  margin-top: auto;
+@media screen and (min-width: 768px) {
+  .header__navigation {
+    align-items: center;
+  }
 }
 
 .nav {
@@ -181,6 +220,11 @@ img {
   line-height: 1.17;
   letter-spacing: 0.02em;
   color: var(--text-color);
+  margin-right: 84px;
+}
+
+.header__content:not(:last-child) {
+  margin-right: 50px;
 }
 
 @media screen and (max-width: 767.98px) {
@@ -202,44 +246,6 @@ img {
   }
   .header__text:hover, .header__text:focus {
     color: var(--accent-color);
-  }
-}
-
-@media screen and (max-width: 767.98px) {
-  .header__contacts {
-    display: flex;
-    flex-direction: column-reverse;
-    margin-bottom: 64px;
-  }
-}
-
-@media screen and (max-width: 767.98px) {
-  .header__item {
-    font-weight: 500;
-    font-size: 34px;
-    line-height: 1.17;
-    letter-spacing: 0.02em;
-    font-size: calc(24px + (34 - 24) * ((100vw - 320px) / (480 - 320)));
-    color: var(--accent-color);
-  }
-  .header__item:nth-child(1) {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 1.17;
-    letter-spacing: 0.02em;
-    color: var(--secondary-text-color);
-  }
-  .header__item:not(:last-child) {
-    margin-top: 32px;
-  }
-  .header__item:hover, .header__item:focus {
-    color: var(--accent-color);
-  }
-}
-
-@media screen and (max-width: 767.98px) {
-  .header__icon {
-    display: none;
   }
 }
 
@@ -282,10 +288,116 @@ img {
 }
 
 .hero__container {
-  padding: 120px 60px;
   height: 400px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/img/hero/Header-mobile.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .hero__container {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/img/hero/Header-mobile@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+  .hero__container {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/img/hero/Header-tablet.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199.98px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (max-width: 1199.98px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (max-width: 1199.98px) and (min-resolution: 2dppx) {
+  .hero__container {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/img/hero/Header-tablet@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero__container {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/img/hero/header-desktop.jpg);
+  }
+}
+
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .hero__container {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/img/hero/header-desktop@2x.jpg);
+  }
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__title {
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.62;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.navigation-contacts {
+  margin-top: auto;
+}
+
+@media screen and (max-width: 767.98px) {
+  .header__contacts {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 64px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__contacts {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+  .header__item:first-child {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .header__item {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    font-size: calc(24px + (34 - 24) * ((100vw - 320px) / (480 - 320)));
+    color: var(--accent-color);
+  }
+  .header__item:nth-child(1) {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    color: var(--secondary-text-color);
+  }
+  .header__item:not(:last-child) {
+    margin-top: 32px;
+  }
+  .header__item:hover, .header__item:focus {
+    color: var(--accent-color);
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .header__icon {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */
