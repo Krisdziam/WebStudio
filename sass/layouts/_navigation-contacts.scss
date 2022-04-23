@@ -8,6 +8,11 @@
     flex-direction: column-reverse;
     margin-bottom: 64px;
   }
+
+  @include mq(desktop) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .header__item {
@@ -33,22 +38,28 @@
       margin-top: 32px;
     }
   }
+  @include mq(desktop) {
+    &:first-child {
+      margin-right: 30px;
+    }
+  }
 }
 
 .header__link {
   display: flex;
   align-items: center;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
+
+  &:focus,
+  &:hover {
     color: var(--accent-color);
     fill: var(--accent-color);
   }
 }
+
 .header__icon {
   fill: var(--secondary-text-color);
   margin-right: 8px;
-  transition: fill var(--transition);
 
   @include mq(mobile-only) {
     display: none;

@@ -9,7 +9,6 @@
 }
 
 .header__container {
-  // position: relative;
   padding-top: 16px;
   padding-bottom: 16px;
 
@@ -48,6 +47,7 @@
 
 .nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   @include mq(mobile-only) {
     align-items: center;
@@ -63,6 +63,11 @@
   @include mq(tablet) {
     display: flex;
   }
+
+  @include mq(desktop) {
+    margin-left: 93px;
+    margin-right: 305px;
+  }
 }
 
 .header__content {
@@ -73,6 +78,27 @@
   @include mq(mobile-only) {
     &:not(:last-child) {
       margin-bottom: 32px;
+    }
+  }
+
+  & .current {
+    @include mq(tablet) {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -29px;
+        float: inline-end;
+        display: block;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: var(--accent-color);
+        @include mq(desktop) {
+          bottom: -24px;
+        }
+      }
     }
   }
 }
