@@ -99,10 +99,16 @@ img {
 
 .menu-button__icon--open {
   opacity: 0;
+  transform: scale(1) rotate(0) translateY(0);
+  transform-origin: center;
+  transition: opacity 400ms ease, transform 400ms ease;
 }
 
 .menu-button__icon--close {
   opacity: 1;
+  transform: scale(1) rotate(0) translateY(0);
+  transform-origin: center;
+  transition: opacity 400ms ease, transform 400ms ease;
 }
 
 .menu-button.is-open .menu-button__icon--close {
@@ -111,6 +117,19 @@ img {
 
 .menu-button.is-open .menu-button__icon--open {
   opacity: 1;
+}
+
+.logo {
+  display: block;
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+}
+
+.header__logo--web {
+  color: var(--accent-color);
 }
 
 .header__container {
@@ -130,11 +149,19 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
     padding: 48px 40px;
   }
   .header__navigation.is-open {
-    display: none;
+    opacity: 0;
+    transform: translateX(100%);
   }
+}
+
+.navigation-contacts {
+  margin-top: auto;
 }
 
 .nav {
@@ -146,19 +173,6 @@ img {
   .nav {
     justify-content: space-between;
   }
-}
-
-.logo {
-  display: block;
-  font-family: 'Raleway';
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-}
-
-.header__logo--web {
-  color: var(--accent-color);
 }
 
 .header__list {
@@ -205,6 +219,7 @@ img {
     font-size: 34px;
     line-height: 1.17;
     letter-spacing: 0.02em;
+    font-size: calc(24px + (34 - 24) * ((100vw - 320px) / (480 - 320)));
     color: var(--accent-color);
   }
   .header__item:nth-child(1) {
@@ -230,6 +245,9 @@ img {
 
 .menu__list {
   display: flex;
+  flex-wrap: wrap;
+  margin-top: -10px;
+  margin-right: -10px;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.22;
@@ -244,19 +262,30 @@ img {
 }
 
 .menu__contacts {
-  display: block;
-  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .menu__contacts:last-child {
   border: none;
 }
 
-.menu__link {
-  margin-right: 10px;
+.menu__contacts:last-child .menu__link {
+  border: none;
+  padding: 0;
 }
 
-.navigation-contacts {
-  margin-top: auto;
+.menu__link {
+  display: block;
+  padding-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.hero__container {
+  padding: 120px 60px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /*# sourceMappingURL=main.css.map */
