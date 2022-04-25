@@ -1,0 +1,52 @@
+.features {
+  padding: 60px 0;
+
+  @include mq(desktop) {
+    padding-bottom: 94px;
+  }
+}
+
+.features__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.features__item {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc((100% - 1 * 30px) / 1);
+
+  @include mq(tablet) {
+    flex-basis: calc((100% - 2 * 30px) / 2);
+  }
+  @include mq(desktop) {
+    flex-basis: calc((100% - 4 * 30px) / 4);
+  }
+}
+
+.features__logo {
+  @include flex-center;
+  height: 120px;
+  width: 100%;
+  background: #f5f4fa;
+  border-radius: 4px;
+
+  margin-bottom: 30px;
+}
+.features__icon {
+  fill: var(--text-color);
+}
+.features__title {
+  @include fonts(700, 14px, 1.14);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+.features__text {
+  @include fonts();
+
+  color: var(--secondary-text-color);
+}

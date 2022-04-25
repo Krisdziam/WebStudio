@@ -2,6 +2,12 @@
   color: var(--accent-color);
 }
 
+.title {
+  @include fonts(700, 28px, 1.17);
+  text-align: center;
+  color: var(--text-color);
+}
+
 .no-scroll {
   overflow: hidden;
 }
