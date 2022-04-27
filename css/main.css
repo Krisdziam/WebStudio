@@ -266,6 +266,66 @@ img {
   align-items: center;
 }
 
+.portfolio {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio {
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio {
+    padding-top: 94px;
+    padding-bottom: 50px;
+  }
+}
+
+.portfolio__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio__list {
+    justify-content: center;
+  }
+}
+
+.portfolio__item:not(:last-child) {
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 767.98px) {
+  .portfolio__item:nth-child(3n + 2) {
+    margin-bottom: 15px;
+  }
+}
+
+.portfolio__button {
+  padding: 6px 22px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
+  border: none;
+  background-color: var(--section-bg-color);
+  border-radius: 4px;
+  text-align: center;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.portfolio__button:hover, .portfolio__button:focus {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
 .logo {
   display: block;
   font-family: 'Raleway';
