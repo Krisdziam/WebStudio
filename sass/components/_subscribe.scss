@@ -1,5 +1,5 @@
 .subscribtion {
-  @media screen and (min-width: 1200px) {
+  @include mq(desktop) {
     display: flex;
     justify-content: space-between;
   }
@@ -15,7 +15,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   background-color: inherit;
   color: var(--white-color);
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border var(--transition);
 
   &:focus {
     border: 1px solid var(--accent-color);
@@ -27,12 +27,12 @@
     color: rgba(255, 255, 255, 0.6);
   }
 
-  @media screen and (max-width: 1199px) {
+  @include mq(notDesktop) {
     width: 100%;
     margin-bottom: 20px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @include mq(desktop) {
     width: 358px;
   }
 }

@@ -88,6 +88,10 @@
   align-items: center;
   color: var(--secondary-text-color);
 
+  & a {
+    text-decoration: underline;
+  }
+
   &:before {
     content: '';
     margin-right: 8px;
