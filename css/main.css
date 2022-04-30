@@ -121,7 +121,7 @@ img {
   width: 40px;
   height: 40px;
   position: relative;
-  z-index: 1000;
+  z-index: 100;
   background-color: transparent;
   border: transparent;
   outline: transparent;
@@ -1270,7 +1270,6 @@ img {
 
 .portfolio-product__item {
   position: relative;
-  z-index: -1;
   margin-top: 30px;
   margin-left: 30px;
   border: 1px solid #eeeeee;
