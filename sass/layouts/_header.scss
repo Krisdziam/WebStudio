@@ -19,6 +19,11 @@
   padding-bottom: 16px;
 
   @include mq(tablet) {
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+
+  @include mq(desktop) {
     padding-top: 25px;
     padding-bottom: 25px;
   }
@@ -97,7 +102,7 @@
         content: '';
         position: absolute;
         left: 0;
-        bottom: -39px;
+        bottom: -34px;
 
         display: block;
         width: 100%;

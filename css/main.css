@@ -568,6 +568,13 @@ img {
 
 @media screen and (min-width: 768px) {
   .header__container {
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header__container {
     padding-top: 25px;
     padding-bottom: 25px;
   }
@@ -661,7 +668,7 @@ img {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -39px;
+    bottom: -34px;
     display: block;
     width: 100%;
     height: 4px;
