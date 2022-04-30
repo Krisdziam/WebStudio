@@ -70,7 +70,7 @@
 .checkbox__input {
   &:checked + .checkbox__label:before {
     background-color: var(--accent-color);
-    background-image: url(/img/icons/checked.svg);
+    background-image: url(../img/icons/checked.svg);
     background-size: contain;
     border-color: var(--accent-color);
     background-origin: border-box;

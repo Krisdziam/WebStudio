@@ -1,7 +1,11 @@
 .socials__list {
   @include flex-center;
 }
-
+.socials__item {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
 .socials__link {
   @include flex-center;
   width: 44px;

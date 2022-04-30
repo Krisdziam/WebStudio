@@ -35,15 +35,17 @@
 
   margin-bottom: 30px;
 }
-.features__icon {
-  fill: var(--text-color);
-}
+
 .features__title {
   @include fonts(700, 14px, 1.14);
-  text-align: center;
+
   text-transform: uppercase;
   color: var(--text-color);
   margin-bottom: 10px;
+
+  @include mq(mobile-only) {
+    text-align: center;
+  }
 }
 .features__text {
   @include fonts();

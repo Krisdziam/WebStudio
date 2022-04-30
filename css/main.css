@@ -189,6 +189,10 @@ img {
   align-items: center;
 }
 
+.socials__item:not(:last-child) {
+  margin-right: 10px;
+}
+
 .socials__link {
   display: flex;
   justify-content: center;
@@ -487,7 +491,7 @@ img {
 
 .checkbox__input:checked + .checkbox__label:before {
   background-color: var(--accent-color);
-  background-image: url(/img/icons/checked.svg);
+  background-image: url(../img/icons/checked.svg);
   background-size: contain;
   border-color: var(--accent-color);
   background-origin: border-box;
@@ -538,6 +542,10 @@ img {
   margin-left: auto;
 }
 
+.header {
+  border-bottom: 1px solid #ececec;
+}
+
 .logo {
   display: block;
   font-family: 'Raleway';
@@ -556,7 +564,13 @@ img {
   z-index: 0;
   padding-top: 16px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #ececec;
+}
+
+@media screen and (min-width: 768px) {
+  .header__container {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
 }
 
 .header__navigation {
@@ -647,8 +661,7 @@ img {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -29px;
-    float: inline-end;
+    bottom: -39px;
     display: block;
     width: 100%;
     height: 4px;
@@ -659,7 +672,7 @@ img {
 
 @media screen and (min-width: 768px) and (min-width: 1200px) {
   .header__content .current::after {
-    bottom: -24px;
+    bottom: -32px;
   }
 }
 
@@ -722,14 +735,21 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/hero/header-desktop@2x.jpg);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/hero/header-mobile.jpg);
   background-size: cover;
   background-position: center;
 }
 
+@media screen and (min-width: 1200px) {
+  .hero__container {
+    height: 600px;
+    max-width: 100%;
+  }
+}
+
 @media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .hero__container {
-    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/hero/Header-mobile.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/hero/header-mobile@2x.jpg);
   }
 }
 
@@ -904,19 +924,20 @@ img {
   margin-bottom: 30px;
 }
 
-.features__icon {
-  fill: var(--text-color);
-}
-
 .features__title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
-  text-align: center;
   text-transform: uppercase;
   color: var(--text-color);
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767.98px) {
+  .features__title {
+    text-align: center;
+  }
 }
 
 .features__text {
@@ -1277,7 +1298,7 @@ img {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: var(--accent-color);
+  background-color: rgba(33, 150, 243, 0.9);
   transform: translateY(101%);
   transition: transform var(--transition);
 }
