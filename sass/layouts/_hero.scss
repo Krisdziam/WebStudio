@@ -7,7 +7,7 @@
   }
   @include mq(mobile) {
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-      url(/img/hero/header-mobile.jpg);
+      url(../img/hero/Header-mobile.jpg);
     background-size: cover;
     background-position: center;
 
@@ -15,7 +15,7 @@
       screen and(min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-        url(../img/hero/header-mobile@2x.jpg);
+        url(../img/hero/Header-mobile@2x.jpg);
     }
   }
   @include mq(tablet-only) {
