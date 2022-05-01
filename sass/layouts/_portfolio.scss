@@ -36,6 +36,11 @@
   position: relative;
 
   overflow: hidden;
+
+  & img {
+    position: relative;
+    z-index: -1;
+  }
 }
 .portfolio-product__overlay {
   @include flex-center;
@@ -77,9 +82,4 @@
   @include fonts(400, 16px, 1.88);
 
   color: var(--secondary-text-color);
-}
-
-.portfolio-product__thumb img {
-  position: relative;
-  z-index: -1;
 }

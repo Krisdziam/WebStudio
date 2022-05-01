@@ -1293,6 +1293,11 @@ img {
   overflow: hidden;
 }
 
+.portfolio-product__thumb img {
+  position: relative;
+  z-index: -1;
+}
+
 .portfolio-product__overlay {
   display: flex;
   justify-content: center;
@@ -1345,10 +1350,5 @@ img {
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
-}
-
-.portfolio-product__thumb img {
-  position: relative;
-  z-index: -1;
 }
 /*# sourceMappingURL=main.css.map */
