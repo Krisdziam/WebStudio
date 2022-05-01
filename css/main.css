@@ -116,6 +116,40 @@ img {
   margin: 0;
 }
 
+.header__navigation {
+  display: flex;
+}
+
+@media screen and (max-width: 767.98px) {
+  .header__navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
+    padding: 48px 40px;
+  }
+  .header__navigation.is-open {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__navigation {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .menu-button {
   display: block;
   width: 40px;
@@ -313,15 +347,6 @@ img {
   .portfolio__item:nth-child(-n + 3) {
     margin-bottom: 15px;
   }
-}
-
-.portfolio-product__link {
-  display: block;
-}
-
-.portfolio-product__link:focus, .portfolio-product__link:hover {
-  color: inherit;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio__button {
@@ -577,40 +602,6 @@ img {
   .header__container {
     padding-top: 25px;
     padding-bottom: 25px;
-  }
-}
-
-.header__navigation {
-  display: flex;
-}
-
-@media screen and (max-width: 767.98px) {
-  .header__navigation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    opacity: 1;
-    transform: translateX(0);
-    transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
-    padding: 48px 40px;
-  }
-  .header__navigation.is-open {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .header__navigation {
-    align-items: center;
-    justify-content: center;
   }
 }
 
@@ -1268,7 +1259,6 @@ img {
 }
 
 .portfolio-product__item {
-  position: relative;
   margin-top: 30px;
   margin-left: 30px;
   border: 1px solid #eeeeee;
@@ -1288,22 +1278,25 @@ img {
   }
 }
 
+.portfolio-product__link {
+  display: block;
+  transition: box-shadow var(--transition);
+}
+
+.portfolio-product__link:focus, .portfolio-product__link:hover {
+  color: inherit;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .portfolio-product__thumb {
   position: relative;
   overflow: hidden;
 }
 
-.portfolio-product__text {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.56;
-  letter-spacing: 0.03em;
-  color: var(--white-color);
+.portfolio-product__overlay {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-right: 24px;
-  padding-left: 24px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1314,8 +1307,18 @@ img {
   transition: transform var(--transition);
 }
 
-.portfolio-product__link:hover .portfolio-product__text {
+.portfolio-product__link:hover .portfolio-product__overlay {
   transform: translateY(0);
+}
+
+.portfolio-product__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--white-color);
+  padding-right: 24px;
+  padding-left: 24px;
 }
 
 @media screen and (max-width: 767.98px) {
@@ -1342,5 +1345,10 @@ img {
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
+}
+
+.portfolio-product__thumb img {
+  position: relative;
+  z-index: -1;
 }
 /*# sourceMappingURL=main.css.map */
