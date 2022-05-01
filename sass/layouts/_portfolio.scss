@@ -43,7 +43,6 @@
   }
 }
 .portfolio-product__overlay {
-  @include flex-center;
   position: absolute;
 
   width: 100%;
@@ -59,7 +58,8 @@
 }
 .portfolio-product__text {
   @include fonts(400, 18px, 1.56);
-
+  padding-top: 49px;
+  padding-left: 24px;
   color: var(--white-color);
 
   padding-right: 24px;

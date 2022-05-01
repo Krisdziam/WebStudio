@@ -1309,9 +1309,6 @@ img {
 }
 
 .portfolio-product__overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1331,6 +1328,8 @@ img {
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
+  padding-top: 49px;
+  padding-left: 24px;
   color: var(--white-color);
   padding-right: 24px;
   padding-left: 24px;
